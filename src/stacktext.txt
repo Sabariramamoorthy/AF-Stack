@@ -1,0 +1,50 @@
+
+*Installing the angular Firebase in the system 
+npm i @angular/fire
+
+*Create a folder name as enviornment and create a file name as enviornment.ts
+In that file paste the Firebase Config values from the project setting of the Firebase project
+Create Costant as enviornment as below
+export const environment = {
+    firebaseConfig :{
+        apiKey: "AIzaSyC5slKVKE4z13mKZQynHi8hwBlhK8xy1SU",
+        authDomain: "sound-dahlia-290617.firebaseapp.com",
+        databaseURL: "https://sound-dahlia-290617-default-rtdb.firebaseio.com",
+        projectId: "sound-dahlia-290617",
+        storageBucket: "sound-dahlia-290617.appspot.com",
+        messagingSenderId: "333674478909",
+        appId: "1:333674478909:web:a22289e066221ef1935954",
+        measurementId: "G-C95GY9CK1J",
+        vapidKey: "BL363bphqOA-G6_sI38GapYLSXt-2dqClSo0nLc2pblLm-Nk07uPo-ChZOGNUcG-3mkJLNoKqgu0-p7Ceiyk1Nw"
+      }
+  }; 
+
+
+*Import the Firebase Modules in app.module.ts and initalize the app using the firebase Config from enviornment.ts
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarDashboardComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireMessagingModule
+    
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+Note:It will initalize the app for connecting the firebase
+
+*Create a services for database ,Realtime and storage
+
+
+
+
